@@ -12,23 +12,23 @@ class Program
 
             if (windSpeed >= 157)
             {
-                category = "five";
+                category = "Five";
             }
             else if (windSpeed >= 130)
             {
-                category = "four";
+                category = "Four";
             }
             else if (windSpeed >= 111)
             {
-                category = "three";
+                category = "Three";
             }
             else if (windSpeed >= 96)
             {
-                category = "two";
+                category = "Two";
             }
-            else
+            else if (windSpeed >= 74)
             {
-                category = "one";
+                category = "One";
             }
             Console.WriteLine("This is a category " + category + " hurricane");
         }
