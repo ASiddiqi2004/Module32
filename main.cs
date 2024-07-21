@@ -1,45 +1,40 @@
 using System;
 
-class Program {
-  public static void Main (string[] args) {
-    Console.WriteLine("Enter the wind speed in mph: ");
-                string input = Console.ReadLine();
-                if (int.TryParse(input, out int windspeed))
-                {
-                string category = GetProgram(windspeed);
-                Console.WriteLine(category);
-                }
-                else
-                {
-                Console.WriteLine("Invalid input. Enter a valid number for wind speed.");
-                }
-            static string GetProgram(int windspeed)
+class Program
+{
+    public static void Main()
+    {
+        Console.Write("Enter wind speed in mph: ");
+        double windSpeed = Convert.ToDouble(Console.ReadLine());
+        if (windSpeed >= 74)
+        {
+            string category = "";
+
+            if (windSpeed >= 157)
             {
-                if (windspeed >= 157)
-                {
-                return "Category Five Hurricane";
-                }
-              else if (windspeed >= 130)
-                {
-                return "Category Four Hurricane";
-                }
-              else if (windspeed >= 111)
-                {
-                return "Category Three Hurricane";
-                }
-              else if (windspeed >= 96)
-                {
-                return "Category Two Hurricane";
-                }
-              else if (windspeed >= 74)
-                {
-                return "Category One Hurricane";
-                }
-                else
-                {
-                return "Not a Hurricane";
-                }
+                category = "five";
             }
-  }
+            else if (windSpeed >= 130)
+            {
+                category = "four";
+            }
+            else if (windSpeed >= 111)
+            {
+                category = "three";
+            }
+            else if (windSpeed >= 96)
+            {
+                category = "two";
+            }
+            else
+            {
+                category = "one";
+            }
+            Console.WriteLine("This is a category " + category + " hurricane");
+        }
+        else
+        {
+            Console.WriteLine("This is not a hurricane.");
+        }
+    }
 }
-        
